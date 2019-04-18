@@ -8,16 +8,16 @@ namespace HW3
 {
     public static class ApartmentExtensions
     {
-        public static IEnumerable<Apartment> Union(this IEnumerable<Apartment> first, IEnumerable<Apartment> second)
+        public static IEnumerable<Apartment> UnionAll(this IEnumerable<Apartment> first, IEnumerable<Apartment> second)
         {
             return Enumerable.Concat(first, second).ToArray();
         }
 
-        public static IEnumerable<Apartment> UnionAll(this IEnumerable<Apartment> first, IEnumerable<Apartment> second)
+        public static IEnumerable<Apartment> Union(this IEnumerable<Apartment> first, IEnumerable<Apartment> second)
         {
-            HashSet<Apartment> apartments = new HashSet<Apartment>();
+            HashSet<Apartment> apartments = new HashSet<Apartment>(first);
 
-            foreach (Apartment item in Enumerable.Concat(first, second))
+            foreach (Apartment item in second)
             {
                 apartments.Add(item);
             }

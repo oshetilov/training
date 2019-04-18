@@ -14,7 +14,7 @@ namespace HW3
     {
         static void Main(string[] args)
         {
-            BenchmarkRunner.Run<BenchmarkMeter>();
+             BenchmarkRunner.Run<BenchmarkMeter>();
 
             /* var firstPart = ReadCSV("./Barcelona1.csv");
              var secondPart = ReadCSV("./Barcelona2.csv");
